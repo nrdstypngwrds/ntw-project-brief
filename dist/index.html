@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- flowbite css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet" />
+    <link href="/dist/css/output.css" rel="stylesheet">
+    <!-- CSS -->
+    <title>Creative Project Brief</title>
+    <!-- Dark mode -->
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </head>
+
+  <body class="dark:bg-neutral-800 dark:text-white h-screen font-mono text-black bg-white">
+    <header class="h-14 z-50 w-screen">
+      <nav
+        class="bg-white border-b border-neutral-200 px-4 py-2.5 dark:bg-neutral-800 dark:border-neutral-700 fixed left-0 right-0 top-0 z-50 backdrop-blur-lg">
+        <div class="flex flex-wrap items-center justify-between">
+          <div class="flex items-center justify-start">
+            <button data-drawer-target="drawer-navigation" data-drawer-toggle="drawer-navigation"
+              aria-controls="drawer-navigation"
+              class="hover:text-black hover:bg-neutral-100 focus:bg-neutral-100 dark:focus:bg-neutral-700 focus:ring-2 focus:ring-neutral-100 dark:focus:ring-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white text-neutral-600 hidden p-2 mr-2 rounded-lg cursor-pointer">
+              <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <svg aria-hidden="true" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span class="sr-only">Toggle sidebar</span>
+            </button>
+            <a href="https://flowbite.com" class="flex items-center justify-between mr-4">
+              <img class="dark:hidden inline-flex w-8 h-auto mr-2 rounded"
+                src="./images/logo-black.png" alt="nerds typing words black logo">
+              <img class="dark:inline-flex hidden w-8 h-auto mr-2 rounded"
+                src="./images/logo-green.png" alt="nerds typing words limegreen logo">
+              <span class="whitespace-nowrap self-center uppercase">Creative Project Brief</span>
+            </a>
+          </div>
+          <div class="lg:order-2 flex items-center">
+            <!-- Avatar -->
+            <button type="button"
+              class="md:mr-0 hover:bg-neutral-100 dark:hover:bg-neutral-700 flex p-2 mx-3 text-sm rounded-lg"
+              id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown"
+              data-dropdown-offset-skidding="-80" data-dropdown-trigger="hover"
+              data-dropdown-delay="50">
+              <span class="sr-only">Open user menu</span>MENU</button>
+            <!-- Dropdown menu -->
+            <div
+              class="dark:bg-neutral-800 dark:divide-neutral-600 divide-neutral-100 border-neutral-100 dark:border-neutral-700 z-50 hidden w-56 my-4 text-base list-none bg-white border divide-y rounded-lg shadow"
+              id="dropdown">
+              <div class="px-4 py-3 text-sm">
+                <div class=" font-medium">nerds<span class="text-primary">typing</span>words</div>
+                <div class="truncate">dev@.nrdstypngwrdscom</div>
+              </div>
+              <ul class="py-2 text-sm"
+                aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+                <li>
+                  <a href="#" title="nerdstypingwords: Custom Design &amp; Development"
+                    target="_blank"
+                    class="hover:bg-neutral-100 dark:hover:bg-neutral-600 block px-4 py-2">nrdstypngwrds.com
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="Project Brief - PDF" target="_blank"
+                    class="hover:bg-neutral-100 dark:hover:bg-neutral-600 block px-4 py-2">Project
+                    Brief-PDF</a>
+                </li>
+                <li>
+                  <a href="#" title="Contact" target="_blank"
+                    class="hover:bg-neutral-100 dark:hover:bg-neutral-600 block px-4 py-2">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <!-- theme -->
+            <button id="theme-toggle" type="button"
+              class="text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700  rounded-lg text-sm p-2.5">
+              <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+                </path>
+              </svg>
+              <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- Sidebar -->
+      <aside
+        class="pt-14 md:translate-x-0 dark:bg-neutral-800 dark:border-neutral-700 border-neutral-200 fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full bg-white border-r"
+        aria-label="Sidenav" id="drawer-navigation">
+        <div class="bg-neutral-50 dark:bg-neutral-800 h-full px-3 py-4 overflow-y-auto">
+          <!-- Table of Contents -->
+          <ul class="space-y-2">
+            <li>
+              <a href="#top"
+                class="dark:text-white group flex items-center font-normal text-black uppercase rounded-lg">
+                Table of Contents </a>
+            </li>
+            <hr class="dark:bg-neutral-700 bg-neutral-300 h-px my-8 border-0">
+            <!-- Contact details -->
+            <li>
+              <a href="#contactDetails"
+                class="dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 group flex items-center p-2 text-sm font-normal text-black rounded-lg">
+                Contact Details </a>
+            </li>
+            <!-- Budget & Timeline -->
+            <li>
+              <a href="#budgetTimeline"
+                class="dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 group flex items-center p-2 text-sm font-normal text-black rounded-lg">
+                Budget & Timeline </a>
+            </li>
+          </ul>
+      </aside>
+    </header>
+    <main class="md:ml-64 h-full p-2">
+      <!-- Title -->
+      <div class="text-start flex items-start justify-start mt-2" id="#">
+        <h1 class="text-3xl tracking-widest uppercase">Creative Project Brief</h1>
+      </div>
+      <hr class="dark:bg-neutral-700 bg-neutral-300 h-px mt-2 mb-8 border-0">
+      <!-- Contact details section -->
+      <section class="h-auto p-2">
+        <div class="text-start flex items-start justify-start mb-4">
+          <h1 class="text-2xl tracking-wide uppercase">Contact Details</h1>
+        </div>
+        <!-- Grid -->
+        <!-- Row 1 -->
+        <div class="md:gap-2 grid grid-cols-2 gap-1 mb-6">
+          <!-- First name -->
+          <div>
+            <label for="first-name" class="md:text-base block mb-2 text-sm font-medium">First
+              Name</label>
+            <input type="text" id="first-name" placeholder="First Name"
+              class="bg-neutral-50 md:text-sm focus:ring-primary focus:border-primary dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary text-neutral-900 border-neutral-300 block w-full p-2 text-xs border rounded-lg">
+          </div>
+          <!-- Last name -->
+          <div>
+            <label for="last-name" class="md:text-base block mb-2 text-sm font-medium">Last
+              Name</label>
+            <input type="text" id="last-name" placeholder="Last Name"
+              class="bg-neutral-50 md:text-sm focus:ring-primary focus:border-primary dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary text-neutral-900 border-neutral-300 block w-full p-2 text-xs border rounded-lg">
+          </div>
+        </div>
+        <!-- row 2 -->
+        <div class="md:gap-2 grid grid-cols-2 gap-1">
+          <!-- Email -->
+          <div>
+            <label for="email" class="md:text-base block mb-2 text-sm font-medium">Email</label>
+            <input type="email" id="email" name="Email" placeholder="dev@nrdstypngwrds.com"
+              class="bg-neutral-50 md:text-sm focus:ring-primary focus:border-primary dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary text-neutral-900 border-neutral-300 block w-full p-2 text-xs border rounded-lg">
+          </div>
+          <!--Phone -->
+          <div>
+            <label for="phone" class="md:text-base block mb-2 text-sm font-medium">Phone</label>
+            <input type="tel" id="phone" name="Phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+              placeholder="000-000-000"
+              class="bg-neutral-50 md:text-sm focus:ring-primary focus:border-primary dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary text-neutral-900 border-neutral-300 block w-full p-2 text-xs border rounded-lg">
+          </div>
+        </div>
+      </section>
+      <hr class="dark:bg-neutral-700 bg-neutral-300 h-px my-4 border-0">
+      <!-- Budget & timeline section -->
+      <section class="h-auto p-2">
+        <div class="text-start flex items-start justify-start mb-4">
+          <h1 class="text-2xl tracking-wide uppercase">Budget &amp; Timeline</h1>
+        </div>
+        <!-- Grid -->
+        <div class="md:gap-2 grid grid-cols-2 gap-3 mb-3 align-middle">
+          <!-- Budget -->
+          <div>
+            <label for="countries"
+              class="dark:text-white text-neutral-900 block mb-2 text-sm font-medium">Select an
+              option</label>
+            <select id="countries"
+              class="bg-neutral-50 border border-neutral-300 text-neutral-900 text-xs md:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary">
+              <option selected>Budget</option>
+              <option value="low">$500 - $1000</option>
+              <option value=mid">$1000 - $2000</option>
+              <option value="high">$2000+</option>
+            </select>
+          </div>
+          <!-- Timeline -->
+          <div>
+            <label for="timeline">
+              <p class="md:text-sm text-xs"> The typical project timeline is 4 weeks, do you need
+                your project done faster? </p>
+              <div class="flex">
+                <div class="flex items-center mr-4">
+                  <input id="timeline-1" type="radio" value="Yes" name="Timeline"
+                    class="focus:ring-primary dark:focus:ring-primary dark:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600 text-primary bg-neutral-100 border-neutral-300 w-4 h-4">
+                  <label for="timelime-1"
+                    class="dark:text-neutral-300 text-neutral-900 md:text-sm ml-2 text-xs font-medium">Yes</label>
+                </div>
+                <div class="flex items-center">
+                  <input checked id="timeline-2" type="radio" value="No" name="Timeline"
+                    class="focus:ring-primary dark:focus:ring-primary dark:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600 bg-neutral-100 border-neutral-300 text-primary w-4 h-4">
+                  <label for="timeline-2"
+                    class="dark:text-neutral-300 text-neutral-900 md:text-sm ml-2 text-xs font-medium">No</label>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+      <hr class="dark:bg-neutral-700 bg-neutral-300 h-px border-0">
+    </main>
+    <!-- *************************************************************************************** -->
+    <!-- flowbite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <!-- scripts -->
+    <script src="./js/main.js"></script>
+  </body>
+
+</html>
